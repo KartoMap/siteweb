@@ -28,15 +28,11 @@ function App() {
             <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-green-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
           </div>
 
-          <div className="container mx-auto px-6 py-20 relative z-10">
+          <div className="container mx-auto px-6 py-10 relative z-10">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12 space-y-8">
-                <div className="inline-block animate-float">
-                  <img src="/logo.png" alt="KartoMap" className="h-24 w-auto mx-auto mb-8 drop-shadow-2xl" />
-                </div>
-
                 <h1 className="text-6xl lg:text-7xl xl:text-8xl font-bold text-gray-900 leading-tight animate-fade-in-up">
-                  Cartographie collaborative
+                  Cartographie
                   <br />
                   <span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-green-500 bg-clip-text text-transparent animate-gradient">
                     open source
@@ -57,50 +53,12 @@ function App() {
                     <Code className="w-6 h-6 group-hover:rotate-12 transition-transform" />
                     Rejoindre sur GitHub
                   </a>
-                  <a
-                    href="#contact"
-                    className="group bg-white text-gray-700 px-10 py-5 rounded-xl hover:shadow-2xl transition-all duration-300 font-semibold border-2 border-gray-200 hover:border-cyan-500 text-lg hover:scale-105 hover:-translate-y-1"
-                  >
-                    Demander une démo
-                  </a>
-                </div>
-              </div>
-
-              <div className="mt-16 relative animate-fade-in-up animation-delay-600 max-w-3xl mx-auto">
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-green-400 rounded-3xl blur-3xl opacity-30 animate-pulse-slow"></div>
-                <div className="relative bg-white/50 backdrop-blur-sm rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl">
-                  <div className="w-full aspect-square max-w-md sm:max-w-lg lg:max-w-xl mx-auto">
-                    <img
-                      src="/karto_my_perso.png"
-                      alt="KartoMap Character"
-                      className="w-full h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700 animate-float-slow"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8 animate-fade-in-up animation-delay-800">
-                <div className="text-center p-6 bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <div className="text-4xl font-bold text-cyan-600 mb-2">Open</div>
-                  <div className="text-gray-600 font-medium">Source</div>
-                </div>
-                <div className="text-center p-6 bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">Multi</div>
-                  <div className="text-gray-600 font-medium">Couches</div>
-                </div>
-                <div className="text-center p-6 bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <div className="text-4xl font-bold text-green-600 mb-2">Temps</div>
-                  <div className="text-gray-600 font-medium">Réel</div>
-                </div>
-                <div className="text-center p-6 bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                  <div className="text-4xl font-bold text-orange-600 mb-2">API</div>
-                  <div className="text-gray-600 font-medium">Ouverte</div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 animate-bounce">
             <a href="#features" className="flex flex-col items-center gap-2 text-gray-400 hover:text-cyan-600 transition-colors">
               <span className="text-sm font-medium">Découvrir</span>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -216,7 +174,7 @@ function App() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="bg-gradient-to-br from-cyan-500 to-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                <div className="bg-gradient-to-br from-cyan-500 to-blue-600 w-full h-16 rounded-xl flex items-center justify-center mb-6">
                   <MapPin className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Recensement urbain</h3>
@@ -226,7 +184,7 @@ function App() {
               </div>
 
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="bg-gradient-to-br from-green-500 to-emerald-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                <div className="bg-gradient-to-br from-green-500 to-emerald-600 w-full h-16 rounded-xl flex items-center justify-center mb-6">
                   <Radio className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Géolocalisation en temps réel</h3>
@@ -236,17 +194,17 @@ function App() {
               </div>
 
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="bg-gradient-to-br from-orange-500 to-yellow-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                <div className="bg-gradient-to-br from-orange-500 to-yellow-600 w-full h-16 rounded-xl flex items-center justify-center mb-6">
                   <Layers className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Lignes de transport</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Formulaire</h3>
                 <p className="text-gray-600">
-                  Visualisez et gérez les réseaux de transport public et leurs itinéraires
+                    Collectez des données terrain via des formulaires personnalisables et géolocalisés
                 </p>
               </div>
 
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="bg-gradient-to-br from-blue-500 to-cyan-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                <div className="bg-gradient-to-br from-blue-500 to-cyan-600 w-full h-16 rounded-xl flex items-center justify-center mb-6">
                   <Code className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">APIs ouvertes</h3>
@@ -256,17 +214,17 @@ function App() {
               </div>
 
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="bg-gradient-to-br from-teal-500 to-cyan-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                <div className="bg-gradient-to-br w-full  from-teal-500 to-cyan-600  h-16 rounded-xl flex items-center justify-center mb-6">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">WebSocket</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Interface intuitive</h3>
                 <p className="text-gray-600">
-                  Connexion temps réel entre frontend et backend pour des données à jour
+                    Une interface moderne et facile à prendre en main pour tous les utilisateurs
                 </p>
               </div>
 
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <div className="bg-gradient-to-br from-lime-500 to-green-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                <div className="bg-gradient-to-br from-lime-500 to-green-600 w-full h-16 rounded-xl flex items-center justify-center mb-6">
                   <Database className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Export de données</h3>
