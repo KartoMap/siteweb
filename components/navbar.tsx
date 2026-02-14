@@ -4,17 +4,20 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-
-const navLinks = [
-  { label: "Fonctionnalites", href: "#fonctionnalites" },
-  { label: "Ecosysteme", href: "#ecosysteme" },
-  { label: "API", href: "#api" },
-  { label: "Tarifs", href: "#tarifs" },
-]
+import { LanguageSwitcher } from "@/components/language-switcher"
+import { useI18n } from "@/lib/i18n"
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { t } = useI18n()
+
+  const navLinks = [
+    { label: t("nav.features"), href: "#fonctionnalites" },
+    { label: t("nav.ecosystem"), href: "#ecosysteme" },
+    { label: t("nav.api"), href: "#api" },
+    { label: t("nav.pricing"), href: "#tarifs" },
+  ]
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 50)
@@ -65,6 +68,7 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
+          <LanguageSwitcher variant={scrolled ? "light" : "dark"} />
           <Button
             variant="ghost"
             size="sm"
@@ -74,20 +78,20 @@ export function Navbar() {
                 : "text-[#94a3b8] hover:text-white hover:bg-white/10"
             }
           >
-            Se connecter
+            {t("nav.login")}
           </Button>
           <Button
             size="sm"
             className="bg-[#0d9488] text-white hover:bg-[#0d9488]/90 shadow-lg shadow-[#0d9488]/20"
           >
-            Essayer gratuitement
+            {t("nav.cta")}
           </Button>
         </div>
 
         <button
           className="md:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-label={mobileOpen ? t("nav.closeMenu") : t("nav.openMenu")}
         >
           {mobileOpen ? (
             <X className={`h-6 w-6 ${scrolled ? "text-foreground" : "text-white"}`} />
@@ -122,14 +126,15 @@ export function Navbar() {
             ))}
           </nav>
           <div className="mt-4 flex flex-col gap-2">
+            <LanguageSwitcher variant={scrolled ? "light" : "dark"} />
             <Button variant="ghost" size="sm" className="w-full">
-              Se connecter
+              {t("nav.login")}
             </Button>
             <Button
               size="sm"
               className="w-full bg-[#0d9488] text-white hover:bg-[#0d9488]/90"
             >
-              Essayer gratuitement
+              {t("nav.cta")}
             </Button>
           </div>
         </div>

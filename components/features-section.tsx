@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Layers,
   Map,
@@ -6,60 +8,32 @@ import {
   Users,
   Shield,
 } from "lucide-react"
-
-const features = [
-  {
-    icon: Layers,
-    title: "Gestion des couches",
-    description:
-      "Ajoutez, superposez et organisez vos couches de donnees pour creer des cartes riches et informatives.",
-  },
-  {
-    icon: Map,
-    title: "Fonds de carte personnalises",
-    description:
-      "Changez de fond de carte en un clic ou creez votre propre fond de carte adapte a vos besoins.",
-  },
-  {
-    icon: Table2,
-    title: "Tables de donnees",
-    description:
-      "Creez des tables structurees avec vos donnees pour que tout le monde puisse y acceder et les consulter.",
-  },
-  {
-    icon: Paintbrush,
-    title: "Personnalisation complete",
-    description:
-      "Personnalisez chaque aspect de votre carte : couleurs, icones, styles, legendes et bien plus encore.",
-  },
-  {
-    icon: Users,
-    title: "Collecte collaborative",
-    description:
-      "Impliquez vos citoyens et entreprises dans la creation de donnees grace a des formulaires simples.",
-  },
-  {
-    icon: Shield,
-    title: "Gestion des droits",
-    description:
-      "Controlez finement qui peut voir, editer ou administrer chaque element de votre ecosysteme.",
-  },
-]
+import { useI18n } from "@/lib/i18n"
 
 export function FeaturesSection() {
+  const { t } = useI18n()
+
+  const features = [
+    { icon: Layers, title: t("features.layers.title"), description: t("features.layers.desc") },
+    { icon: Map, title: t("features.basemaps.title"), description: t("features.basemaps.desc") },
+    { icon: Table2, title: t("features.tables.title"), description: t("features.tables.desc") },
+    { icon: Paintbrush, title: t("features.customize.title"), description: t("features.customize.desc") },
+    { icon: Users, title: t("features.collaborative.title"), description: t("features.collaborative.desc") },
+    { icon: Shield, title: t("features.rights.title"), description: t("features.rights.desc") },
+  ]
+
   return (
     <section id="fonctionnalites" className="bg-background py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-primary">
-            Fonctionnalites
+            {t("features.label")}
           </span>
           <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-            Tout ce dont vous avez besoin pour cartographier vos donnees
+            {t("features.title")}
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            Pas besoin de competences techniques ou cartographiques. KartoMap rend la
-            visualisation de donnees accessible a tous.
+            {t("features.subtitle")}
           </p>
         </div>
 

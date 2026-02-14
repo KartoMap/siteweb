@@ -1,71 +1,45 @@
+"use client"
+
 import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
-
-const plans = [
-  {
-    name: "Decouverte",
-    price: "Gratuit",
-    priceDetail: "",
-    description: "Pour explorer KartoMap et creer vos premieres cartes.",
-    features: [
-      "1 carte interactive",
-      "3 couches de donnees",
-      "100 points de donnees",
-      "Fonds de carte standards",
-      "Export PNG",
-    ],
-    cta: "Commencer gratuitement",
-    highlight: false,
-  },
-  {
-    name: "Professionnel",
-    price: "49",
-    priceDetail: "/mois",
-    description: "Pour les equipes et organisations qui veulent aller plus loin.",
-    features: [
-      "Cartes illimitees",
-      "Couches illimitees",
-      "50 000 points de donnees",
-      "API entree & sortie",
-      "Fonds de carte personnalises",
-      "Gestion des utilisateurs",
-      "Support prioritaire",
-    ],
-    cta: "Essai gratuit 14 jours",
-    highlight: true,
-  },
-  {
-    name: "Entreprise",
-    price: "Sur mesure",
-    priceDetail: "",
-    description: "Pour les grandes organisations avec des besoins specifiques.",
-    features: [
-      "Tout le plan Professionnel",
-      "Points de donnees illimites",
-      "SSO & SAML",
-      "SLA garanti",
-      "Connecteurs personnalises",
-      "Formation dediee",
-      "Account manager",
-    ],
-    cta: "Nous contacter",
-    highlight: false,
-  },
-]
+import { useI18n } from "@/lib/i18n"
 
 export function PricingSection() {
+  const { t, ta } = useI18n()
+
+  const plans = [
+    {
+      name: t("pricing.discovery.name"),
+      price: t("pricing.discovery.price"),
+      priceDetail: "",
+      description: t("pricing.discovery.desc"),
+      features: ta("pricing.discovery.features"),
+      cta: t("pricing.discovery.cta"),
+      highlight: false,
+    },
+    {
+      name: t("pricing.enterprise.name"),
+      price: t("pricing.enterprise.price"),
+      priceDetail: "",
+      description: t("pricing.enterprise.desc"),
+      features: ta("pricing.enterprise.features"),
+      cta: t("pricing.enterprise.cta"),
+      highlight: false,
+    },
+  ]
+
   return (
     <section id="tarifs" className="bg-card py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-primary">
-            Tarifs
+            {t("pricing.label")}
           </span>
           <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-            Un plan adapte a chaque besoin
+            {t("pricing.title")}
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            Commencez gratuitement et evoluez au rythme de vos projets cartographiques.
+            {t("pricing.subtitle")}
           </p>
         </div>
 
@@ -82,7 +56,7 @@ export function PricingSection() {
               {plan.highlight && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                   <span className="rounded-full bg-primary px-4 py-1 text-xs font-semibold text-primary-foreground">
-                    Populaire
+                    {t("pricing.popular")}
                   </span>
                 </div>
               )}

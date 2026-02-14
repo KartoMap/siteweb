@@ -1,50 +1,54 @@
-import Image from "next/image"
+"use client"
 
-const footerLinks = [
-  {
-    title: "Produit",
-    links: [
-      { label: "Fonctionnalites", href: "#fonctionnalites" },
-      { label: "API", href: "#api" },
-      { label: "Tarifs", href: "#tarifs" },
-      { label: "Changelog", href: "#" },
-    ],
-  },
-  {
-    title: "Solutions",
-    links: [
-      { label: "Entreprises", href: "#ecosysteme" },
-      { label: "Collectivites", href: "#ecosysteme" },
-      { label: "Communautes", href: "#ecosysteme" },
-      { label: "Education", href: "#" },
-    ],
-  },
-  {
-    title: "Ressources",
-    links: [
-      { label: "Documentation", href: "#" },
-      { label: "Tutoriels", href: "#" },
-      { label: "Blog", href: "#" },
-      { label: "Support", href: "#" },
-    ],
-  },
-  {
-    title: "Entreprise",
-    links: [
-      { label: "A propos", href: "#" },
-      { label: "Carrieres", href: "#" },
-      { label: "Contact", href: "#" },
-      { label: "Mentions legales", href: "#" },
-    ],
-  },
-]
+import Image from "next/image"
+import { useI18n } from "@/lib/i18n"
 
 export function Footer() {
+  const { t } = useI18n()
+
+  const footerLinks = [
+    {
+      title: t("footer.product"),
+      links: [
+        { label: t("footer.features"), href: "#fonctionnalites" },
+        { label: t("footer.apiLink"), href: "#api" },
+        { label: t("footer.pricingLink"), href: "#tarifs" },
+        { label: t("footer.changelog"), href: "#" },
+      ],
+    },
+    {
+      title: t("footer.solutions"),
+      links: [
+        { label: t("footer.businesses"), href: "#ecosysteme" },
+        { label: t("footer.municipalities"), href: "#ecosysteme" },
+        { label: t("footer.communities"), href: "#ecosysteme" },
+        { label: t("footer.education"), href: "#" },
+      ],
+    },
+    {
+      title: t("footer.resources"),
+      links: [
+        { label: t("footer.docs"), href: "#" },
+        { label: t("footer.tutorials"), href: "#" },
+        { label: t("footer.blog"), href: "#" },
+        { label: t("footer.support"), href: "#" },
+      ],
+    },
+    {
+      title: t("footer.company"),
+      links: [
+        { label: t("footer.about"), href: "#" },
+        { label: t("footer.careers"), href: "#" },
+        { label: t("footer.contact"), href: "#" },
+        { label: t("footer.legal"), href: "#" },
+      ],
+    },
+  ]
+
   return (
     <footer className="border-t border-border bg-card">
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-6">
-          {/* Brand */}
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center gap-2">
               <Image
@@ -59,12 +63,10 @@ export function Footer() {
               </span>
             </a>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              La plateforme cartographique no-code pour visualiser, partager et
-              collaborer autour de vos donnees geographiques.
+              {t("footer.description")}
             </p>
           </div>
 
-          {/* Links */}
           {footerLinks.map((group) => (
             <div key={group.title}>
               <h4 className="text-sm font-semibold text-foreground">{group.title}</h4>
@@ -86,26 +88,17 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-sm text-muted-foreground">
-            {"© 2026 KartoMap. Tous droits reserves."}
+            {`\u00A9 ${t("footer.copyright")}`}
           </p>
           <div className="flex gap-6">
-            <a
-              href="#"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Confidentialite
+            <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+              {t("footer.privacy")}
             </a>
-            <a
-              href="#"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              CGU
+            <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+              {t("footer.terms")}
             </a>
-            <a
-              href="#"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Cookies
+            <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+              {t("footer.cookies")}
             </a>
           </div>
         </div>

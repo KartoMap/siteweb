@@ -1,61 +1,45 @@
-import {
-  Building2,
-  Users,
-  Globe,
-  ArrowRight,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
+"use client"
 
-const audiences = [
-  {
-    icon: Building2,
-    title: "Entreprises",
-    description:
-      "Collectez et visualisez les donnees de vos equipes terrain, suivez vos actifs et optimisez vos operations grace a des cartes interactives.",
-    items: [
-      "Suivi des actifs en temps reel",
-      "Rapports cartographiques",
-      "Integration CRM & ERP",
-    ],
-  },
-  {
-    icon: Users,
-    title: "Citoyens",
-    description:
-      "Participez a la creation de donnees pour votre communaute. Signalez, contribuez et consultez les informations de votre territoire.",
-    items: [
-      "Signalements participatifs",
-      "Consultations publiques",
-      "Donnees ouvertes",
-    ],
-  },
-  {
-    icon: Globe,
-    title: "Communautes",
-    description:
-      "Federez vos membres autour de projets cartographiques collaboratifs. Partagez des donnees et prenez des decisions eclairees.",
-    items: [
-      "Projets collaboratifs",
-      "Tableaux de bord partages",
-      "Gestion des membres",
-    ],
-  },
-]
+import { Building2, Users, Globe, ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { useI18n } from "@/lib/i18n"
 
 export function EcosystemSection() {
+  const { t, ta } = useI18n()
+
+  const audiences = [
+    {
+      icon: Building2,
+      title: t("ecosystem.businesses.title"),
+      description: t("ecosystem.businesses.desc"),
+      items: ta("ecosystem.businesses.items"),
+    },
+    {
+      icon: Users,
+      title: t("ecosystem.citizens.title"),
+      description: t("ecosystem.citizens.desc"),
+      items: ta("ecosystem.citizens.items"),
+    },
+    {
+      icon: Globe,
+      title: t("ecosystem.communities.title"),
+      description: t("ecosystem.communities.desc"),
+      items: ta("ecosystem.communities.items"),
+    },
+  ]
+
   return (
     <section id="ecosysteme" className="bg-card py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-primary">
-            Ecosysteme
+            {t("ecosystem.label")}
           </span>
           <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-            Un ecosysteme pour tous les acteurs de votre territoire
+            {t("ecosystem.title")}
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            Connectez entreprises, citoyens et communautes autour de la donnee
-            geographique avec des outils adaptes a chacun.
+            {t("ecosystem.subtitle")}
           </p>
         </div>
 
@@ -86,7 +70,7 @@ export function EcosystemSection() {
               </ul>
               <div className="mt-auto pt-6">
                 <Button variant="ghost" className="text-primary hover:text-primary/80 p-0 h-auto">
-                  En savoir plus
+                  {t("ecosystem.learnMore")}
                   <ArrowRight className="ml-1 h-4 w-4" />
                 </Button>
               </div>
